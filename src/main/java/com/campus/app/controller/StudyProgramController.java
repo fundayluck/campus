@@ -24,7 +24,6 @@ public class StudyProgramController {
         if(service.isNameProgramExists(studyProgram.getName())){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new StudyProgramResponse<> (false, 400, "Name Program Already Exists", null));
         }
-        StudyProgram createStudyProgram = service.createStudyProgram(studyProgram);
         return ResponseEntity.status(HttpStatus.OK).body(new StudyProgramResponse<>(false, 200, "success created Study Program", null));
     }
 

@@ -23,7 +23,6 @@ public class StudentController {
         if(service.isNimExists(student.getNim())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new StudentResponse<>(false, 400, "NIM already exists", null));
         }
-        Student createStudent = service.createStudent(student);
         return ResponseEntity.status(HttpStatus.OK).body(new StudentResponse<>(true, 200, "success created Student", null));
     }
 
